@@ -31,6 +31,7 @@ public class CalcView extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        getContentPane().setFocusable(true);
         this.add(panel1);
         builder = new StringBuilder();
     }
