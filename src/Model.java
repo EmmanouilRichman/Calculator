@@ -30,13 +30,12 @@ public class Model {
         int num2 = 0;
         int size = numbers.size();
 
-        while(size != 0) {
-            if(size == 1){
+        while (size != 0) {
+            if (size == 1) {
                 num1 = answer;
                 num2 = numbers.get(0);
 
-            }
-            else{
+            } else {
                 num1 = numbers.get(0);
                 num2 = numbers.get(1);
             }
@@ -56,10 +55,9 @@ public class Model {
                     }
                     break;
             }
-            if(size == 1){
+            if (size == 1) {
                 numbers.remove(0);
-            }
-            else{
+            } else {
                 numbers.remove(0);
                 numbers.remove(0);
             }
