@@ -25,25 +25,46 @@ public class Model {
     }
 
     public int doArithmetic() {
-        int num1 = numbers.get(0);
-        int num2 = numbers.get(1);
         int answer = 0;
+        int num1 = 0;
+        int num2 = 0;
+        int size = numbers.size();
 
-        switch (toDo.get(0)) {
-            case "+":
-                answer = num1 + num2;
-                break;
-            case "-":
-                answer = num1 - num2;
-                break;
-            case "*":
-                answer = num1 * num2;
-                break;
-            case "/":
-                if (num2 != 0) {
-                    answer = num1 / num2;
-                }
-                break;
+        while(size != 0) {
+            if(size == 1){
+                num1 = answer;
+                num2 = numbers.get(0);
+
+            }
+            else{
+                num1 = numbers.get(0);
+                num2 = numbers.get(1);
+            }
+            switch (toDo.get(0)) {
+                case "+":
+                    answer += num1 + num2;
+                    break;
+                case "-":
+                    answer += num1 - num2;
+                    break;
+                case "*":
+                    answer += num1 * num2;
+                    break;
+                case "/":
+                    if (num2 != 0) {
+                        answer += num1 / num2;
+                    }
+                    break;
+            }
+            if(size == 1){
+                numbers.remove(0);
+            }
+            else{
+                numbers.remove(0);
+                numbers.remove(0);
+            }
+            size = numbers.size();
+            toDo.remove(0);
         }
         numbers.clear();
         toDo.clear();

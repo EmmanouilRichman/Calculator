@@ -14,7 +14,13 @@ public class Controller {
         public void actionPerformed(ActionEvent actionEvent) {
             JButton pushed = (JButton) actionEvent.getSource();
             String item = pushed.getText();
-            if (item.equals("=")) {
+            if(item.equals("Clear")){
+                num = "";
+                view.builder.delete(0, view.builder.length());
+                equation.clear();
+                view.enterTextField.setText("");
+            }
+           else if (item.equals("=")) {
                 equation.add(num);
                 view.enterTextField.setText(Integer.toString(handleEquation(equation)));
                 view.builder.delete(0, view.builder.length());

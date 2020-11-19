@@ -19,6 +19,7 @@ public class CalcView extends JFrame {
     public JButton Button13;
     public JButton Button14;
     public JButton Button15;
+    private JButton Button16;
     StringBuilder builder;
 
 
@@ -51,6 +52,7 @@ public class CalcView extends JFrame {
         Button13.addActionListener(listener);
         Button14.addActionListener(listener);
         Button15.addActionListener(listener);
+        Button16.addActionListener(listener);
     }
 
 }
