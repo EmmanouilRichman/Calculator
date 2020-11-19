@@ -5,8 +5,6 @@ public class Model {
     HashSet<String> operators = new HashSet<>();
     ArrayList<Integer> numbers = new ArrayList<>();
     ArrayList<String> toDo = new ArrayList<>();
-    private String input;
-    private Controller controller;
 
     public Model() {
         operators.add("*");
