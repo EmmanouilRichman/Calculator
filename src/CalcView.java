@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class CalcView extends JFrame {
@@ -25,17 +26,17 @@ public class CalcView extends JFrame {
 
     public CalcView() {
         this.setVisible(true);
-        this.setTitle("Calulator");
-        this.setSize(350, 500);
+        this.setTitle("Calculator");
+        this.setSize(350, 350);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.add(panel1);
         builder = new StringBuilder();
     }
 
 
     public void handleComponents(ActionListener listener) {
-        this.add(panel1);
         enterTextField.setEditable(false);
         Button1.addActionListener(listener);
         Button2.addActionListener(listener);
@@ -53,6 +54,24 @@ public class CalcView extends JFrame {
         Button14.addActionListener(listener);
         Button15.addActionListener(listener);
         Button16.addActionListener(listener);
+
+        Button1.addKeyListener();
+        Button2.addKeyListener();
+        Button3.addKeyListener();
+        Button4.addKeyListener();
+        Button5.addKeyListener();
+        Button6.addKeyListener();
+        Button7.addKeyListener();
+        Button8.addKeyListener();
+        Button9.addKeyListener();
+        Button10.addKeyListener();
+        Button11.addKeyListener();
+        Button12.addKeyListener();
+        Button13.addKeyListener();
+        Button14.addKeyListener();
+        Button15.addKeyListener();
+        Button16.addKeyListener();
+
     }
 
 }

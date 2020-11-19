@@ -4,7 +4,9 @@
     <constraints>
       <xy x="20" y="20" width="1387" height="400"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-6251352"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="3e857" class="javax.swing.JTextField" binding="enterTextField">

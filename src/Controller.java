@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Controller {
@@ -8,6 +10,12 @@ public class Controller {
     private final Model model;
     ArrayList<String> equation = new ArrayList<>();
     String num = "";
+
+    public Controller(CalcView view, Model model) {
+        this.view = view;
+        this.model = model;
+        view.handleComponents(listener);
+    }
 
     ActionListener listener = new ActionListener() {
         @Override
@@ -20,7 +28,7 @@ public class Controller {
                 equation.clear();
                 view.enterTextField.setText("");
             }
-           else if (item.equals("=")) {
+            else if (item.equals("=")) {
                 equation.add(num);
                 view.enterTextField.setText(Integer.toString(handleEquation(equation)));
                 view.builder.delete(0, view.builder.length());
@@ -44,11 +52,23 @@ public class Controller {
         }
     };
 
-    public Controller(CalcView view, Model model) {
-        this.view = view;
-        this.model = model;
-        view.handleComponents(listener);
-    }
+
+    KeyListener keyListener = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent keyEvent) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent keyEvent) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent keyEvent) {
+
+        }
+    };
 
     public int handleEquation(ArrayList equation) {
         return model.handleInput(equation);
